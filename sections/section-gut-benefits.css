@@ -1,1 +1,418 @@
-/* Placeholder */
+/* ============================================
+   Gut Benefits Section - Responsive Layout
+   ============================================ */
+
+/* Root Container - 100vh Full Height Section */
+.gut-benefits {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  background: #ffffff;
+  position: relative;
+}
+
+.gut-benefits-wrapper {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* ============================================
+   Header Section - Prepared for SplitText
+   ============================================ */
+
+.gut-benefits-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Heading - SplitText Ready */
+.gut-benefits-heading {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  color: #000000;
+  margin: 0 0 20px 0;
+  word-spacing: 9999px;
+  overflow-wrap: break-word;
+}
+
+/* Description - SplitText Ready */
+.gut-benefits-description {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #666666;
+  margin: 0;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  word-spacing: 9999px;
+  overflow-wrap: break-word;
+}
+
+/* ============================================
+   Main Content Grid - Three Column Layout
+   ============================================ */
+
+.gut-benefits-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+}
+
+/* ============================================
+   Left Column - Features
+   ============================================ */
+
+.gut-benefits-left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  justify-content: center;
+}
+
+/* ============================================
+   Right Column - Features
+   ============================================ */
+
+.gut-benefits-right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  justify-content: center;
+}
+
+/* ============================================
+   Feature Cards - SplitText Ready
+   ============================================ */
+
+.gut-benefits-feature {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background: #f8f8f8;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.gut-benefits-feature:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Feature Icon */
+.feature-icon {
+  font-size: 28px;
+  line-height: 1;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: #2d5f4f;
+}
+
+.feature-icon svg {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+/* Feature Title - SplitText Ready */
+.feature-title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #000000;
+  margin: 0;
+  word-spacing: 9999px;
+  overflow-wrap: break-word;
+}
+
+/* Feature Description - SplitText Ready */
+.feature-description {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #555555;
+  margin: 0;
+  word-spacing: 9999px;
+  overflow-wrap: break-word;
+}
+
+.feature-description p {
+  margin: 0;
+}
+
+/* ============================================
+   Center Image Column
+   ============================================ */
+
+.gut-benefits-center-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  position: relative;
+}
+
+.product-image-link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.gut-benefits-center-image img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 4px;
+}
+
+/* ============================================
+   Tablet/Medium Screens (768px - 1024px)
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .gut-benefits {
+    padding: 50px 20px;
+    min-height: auto;
+  }
+
+  .gut-benefits-wrapper {
+    gap: 40px;
+  }
+
+  .gut-benefits-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  .gut-benefits-center-image {
+    grid-column: 1 / -1;
+    min-height: 300px;
+  }
+
+  .gut-benefits-heading {
+    font-size: 40px;
+  }
+
+  .gut-benefits-description {
+    font-size: 16px;
+  }
+
+  .feature-title {
+    font-size: 18px;
+  }
+
+  .feature-description {
+    font-size: 13px;
+  }
+}
+
+/* ============================================
+   Mobile Screens (max 768px)
+   ============================================ */
+
+@media (max-width: 768px) {
+  .gut-benefits {
+    padding: 40px 16px;
+    min-height: auto;
+  }
+
+  .gut-benefits-wrapper {
+    gap: 30px;
+  }
+
+  .gut-benefits-header {
+    margin-bottom: 10px;
+  }
+
+  .gut-benefits-heading {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+
+  .gut-benefits-description {
+    font-size: 15px;
+  }
+
+  .gut-benefits-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .gut-benefits-left-column,
+  .gut-benefits-right-column {
+    gap: 20px;
+  }
+
+  .gut-benefits-center-image {
+    grid-column: 1;
+    grid-row: 2;
+    min-height: 250px;
+    margin: 20px 0;
+  }
+
+  .feature-icon {
+    font-size: 24px;
+    height: 30px;
+  }
+
+  .feature-title {
+    font-size: 16px;
+  }
+
+  .feature-description {
+    font-size: 13px;
+  }
+
+  .gut-benefits-feature {
+    gap: 10px;
+    padding: 16px;
+  }
+}
+
+/* ============================================
+   Small Mobile (max 480px)
+   ============================================ */
+
+@media (max-width: 480px) {
+  .gut-benefits {
+    padding: 30px 12px;
+  }
+
+  .gut-benefits-wrapper {
+    gap: 25px;
+  }
+
+  .gut-benefits-heading {
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+
+  .gut-benefits-description {
+    font-size: 14px;
+  }
+
+  .gut-benefits-content {
+    gap: 15px;
+  }
+
+  .gut-benefits-left-column,
+  .gut-benefits-right-column {
+    gap: 15px;
+  }
+
+  .gut-benefits-center-image {
+    min-height: 200px;
+    margin: 15px 0;
+  }
+
+  .feature-icon {
+    font-size: 22px;
+  }
+
+  .feature-title {
+    font-size: 15px;
+  }
+
+  .feature-description {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .gut-benefits-feature {
+    gap: 8px;
+    padding: 14px;
+  }
+}
+
+/* ============================================
+   GSAP SplitText Animation Preparation
+   ============================================ */
+
+/* These classes will be applied by GSAP SplitText */
+/* Lines, words, and chars are automatically wrapped by SplitText */
+
+.gut-benefits-heading .word,
+.gut-benefits-description .word,
+.feature-title .word,
+.feature-description .word {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+.gut-benefits-heading .char,
+.gut-benefits-description .char,
+.feature-title .char,
+.feature-description .char {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+.gut-benefits-heading .line,
+.gut-benefits-description .line,
+.feature-title .line,
+.feature-description .line {
+  display: block;
+  will-change: transform, opacity;
+}
+
+/* ============================================
+   Accessibility & Performance
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .gut-benefits-feature {
+    transition: none;
+  }
+
+  .gut-benefits-feature:hover {
+    transform: none;
+  }
+
+  .gut-benefits-heading .word,
+  .gut-benefits-description .word,
+  .feature-title .word,
+  .feature-description .word,
+  .gut-benefits-heading .char,
+  .gut-benefits-description .char,
+  .feature-title .char,
+  .feature-description .char,
+  .gut-benefits-heading .line,
+  .gut-benefits-description .line,
+  .feature-title .line,
+  .feature-description .line {
+    will-change: auto;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .gut-benefits {
+    min-height: auto;
+    page-break-inside: avoid;
+  }
+}

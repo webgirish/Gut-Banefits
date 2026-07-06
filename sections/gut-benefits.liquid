@@ -1,1 +1,165 @@
-{% comment %} Placeholder {% endcomment %}
+{% capture section_key %}section-{{ section.id }}{% endcapture %}
+
+<div class="gut-benefits" id="{{ section_key }}">
+  <div class="gut-benefits-wrapper">
+    <!-- Heading -->
+    <div class="gut-benefits-header">
+      {% if section.settings.heading %}
+        <h2 class="gut-benefits-heading">
+          {{ section.settings.heading }}
+        </h2>
+      {% endif %}
+      {% if section.settings.description %}
+        <p class="gut-benefits-description">
+          {{ section.settings.description }}
+        </p>
+      {% endif %}
+    </div>
+
+    <!-- Main Content -->
+    <div class="gut-benefits-content">
+      <!-- Left Features Column -->
+      <div class="gut-benefits-left-column">
+        {% for block in section.blocks %}
+          {% if block.type == 'feature' and forloop.index <= 2 %}
+            <div class="gut-benefits-feature" {{ block.shopify_attributes }}>
+              {% if block.settings.feature_icon %}
+                <div class="feature-icon">
+                  {{ block.settings.feature_icon }}
+                </div>
+              {% endif %}
+              {% if block.settings.feature_title %}
+                <h3 class="feature-title">
+                  {{ block.settings.feature_title }}
+                </h3>
+              {% endif %}
+              {% if block.settings.feature_description %}
+                <p class="feature-description">
+                  {{ block.settings.feature_description }}
+                </p>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <!-- Center Product Image -->
+      <div class="gut-benefits-center-image">
+        {% if section.settings.product_image %}
+          {% if section.settings.product_image_link %}
+            <a href="{{ section.settings.product_image_link }}" class="product-image-link">
+              {{ section.settings.product_image | image_url: width: 500 | image_tag: loading: 'lazy', alt: section.settings.product_image_alt }}
+            </a>
+          {% else %}
+            {{ section.settings.product_image | image_url: width: 500 | image_tag: loading: 'lazy', alt: section.settings.product_image_alt }}
+          {% endif %}
+        {% endif %}
+      </div>
+
+      <!-- Right Features Column -->
+      <div class="gut-benefits-right-column">
+        {% for block in section.blocks %}
+          {% if block.type == 'feature' and forloop.index > 2 %}
+            <div class="gut-benefits-feature" {{ block.shopify_attributes }}>
+              {% if block.settings.feature_icon %}
+                <div class="feature-icon">
+                  {{ block.settings.feature_icon }}
+                </div>
+              {% endif %}
+              {% if block.settings.feature_title %}
+                <h3 class="feature-title">
+                  {{ block.settings.feature_title }}
+                </h3>
+              {% endif %}
+              {% if block.settings.feature_description %}
+                <p class="feature-description">
+                  {{ block.settings.feature_description }}
+                </p>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Gut Benefits",
+  "target": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Gut Benefits"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product Image"
+    },
+    {
+      "type": "text",
+      "id": "product_image_alt",
+      "label": "Product Image Alt Text",
+      "default": "Product Image"
+    },
+    {
+      "type": "url",
+      "id": "product_image_link",
+      "label": "Product Image Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "text",
+          "id": "feature_icon",
+          "label": "Feature Icon (HTML/SVG)",
+          "default": "✓"
+        },
+        {
+          "type": "text",
+          "id": "feature_title",
+          "label": "Feature Title",
+          "default": "Feature Title"
+        },
+        {
+          "type": "richtext",
+          "id": "feature_description",
+          "label": "Feature Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gut Benefits",
+      "blocks": [
+        {
+          "type": "feature"
+        },
+        {
+          "type": "feature"
+        },
+        {
+          "type": "feature"
+        },
+        {
+          "type": "feature"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
